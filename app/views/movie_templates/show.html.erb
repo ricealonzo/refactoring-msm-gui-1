@@ -1,5 +1,5 @@
 <h1>
-  Movie #<%= @the_movie.director_id%> details
+  No one can stop you but you  <%= @the_movie.the_director.name %>
 </h1>
 
 <div>
@@ -20,7 +20,7 @@
   <div>
     <label for="title_box">
       Title
-    </label>
+    </label> 
 
     <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
   </div>
@@ -112,14 +112,9 @@
     Director
   </dt>
   <dd>
-    <% the_id = @the_movie.director_id %>
-
-    <% matching_directors = Director.where({ :id => the_id }) %>
-        
-    <% the_director = matching_directors.at(0) %>
-
-    <% if the_director != nil %>
-      <%= the_director.name %>
+    <% if @the_movie.the_director.name != nil %>
+      
+      <%= @the_movie.the_director.name %>
     <% else %>
       Uh oh! We weren't able to find a director for this movie.
     <% end %>
