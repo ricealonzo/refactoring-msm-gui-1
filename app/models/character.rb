@@ -25,9 +25,10 @@ class Character < ApplicationRecord
   def movie
     my_movie_foriengn_key  = self.movie_id
 
-    matchin_movies = Movie.where({:id => my_movie_foriengn_key})
+    match_movies = Movie.where({:id => my_movie_foriengn_key})
 
     the_movies = match_movies.at(0)
 
-    return (the_movies)
+    return the_movies
+  end
 end
