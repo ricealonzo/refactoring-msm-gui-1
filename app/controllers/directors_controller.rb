@@ -54,8 +54,7 @@ class DirectorsController < ApplicationController
   end
 
   def max_dob
-    @youngest = Director.
-      all.
+    @youngest = Director.all.
       where.not({ :dob => nil }).
       order({ :dob => :desc }).
       at(0)
