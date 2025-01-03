@@ -1,5 +1,5 @@
 <h1>
-  No one can stop you but you  <%= @the_movie.director.name %>
+ <%= @the_movie.director.name %>
 </h1>
 
 <div>
@@ -36,28 +36,24 @@
   </div>
 
   <div>
-    <label for="description"> Description </label>
-
-    <textarea id="description" name="query_description" rows="3"><%= @the_movie.description %></textarea>
+    <label for="description_box"> Description </label>
+    <textarea type= "text" id="description_box" name="query_description" rows="3" value = <%= @the_movie.description %>> </textarea>
   </div>
 
   <div>
-    <label for="image">
-      Image
-    </label>
+    <label for="image_box"> Image </label>
 
-    <input type="text" id="image" name="query_image" value="<%= @the_movie.image %>">
+    <input type="text" id="image_box" name="query_image" value="<%= @the_movie.image %>">
   </div>
 
   <div>
     <label for="director_id_box">
-      Director ID
-    </label>
+      Director ID </label>
 
     <input type="text" id="director_id_box" name="query_director_id" value="<%= @the_movie.director_id %>">
   </div>
 
-  <button>
+  <button type = "submit">
     Update movie
   </button>
 </form>
