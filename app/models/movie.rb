@@ -18,11 +18,13 @@ class Movie < ApplicationRecord
     
     director_id = self.director_id
    
-    matching_directors = Director.where({:id => director_id})
+    matching_director = Director.where({:id => director_id})
    
-    the_directors = matching_directors.at(0)
+    the_director = matching_director.at(0)
+
+  
     
-    return the_directors
+    return the_director
   end
   def characters
     

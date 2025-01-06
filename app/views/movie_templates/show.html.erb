@@ -1,5 +1,5 @@
 <h1>
- <%= @the_movie.director.name %>
+ <%= @the_movie.director&.name %>
 </h1>
 
 <div>
@@ -41,8 +41,7 @@
   </div>
 
   <div>
-    <label for="image_box"> Image </label>
-
+    <label for="image_box">Image</label>
     <input type="text" id="image_box" name="query_image" value="<%= @the_movie.image %>">
   </div>
 
@@ -53,7 +52,7 @@
     <input type="text" id="director_id_box" name="query_director_id" value="<%= @the_movie.director_id %>">
   </div>
 
-  <button type = "submit">
+  <button type="submit">
     Update movie
   </button>
 </form>
@@ -100,7 +99,7 @@
     Director
   </dt>
   <dd>
-    <% if @the_movie.director.name != nil %>
+    <% if @the_movie.director != nil %>
 
       <%= @the_movie.director.name %>
     <% else %>

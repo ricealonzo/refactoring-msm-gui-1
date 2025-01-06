@@ -34,7 +34,7 @@
 
 
   <div>
-    <label for="image_box"> Image <label>
+    <label for="image_box">Image<label>
 
     <input type="text" id="image_box" name="query_image">
   </div>
@@ -100,12 +100,13 @@
     </td>
 
     <td>
-<movie >
-      <% if movie.director.name != nil %>
+
+      <% if movie.director != nil %>
         <%= movie.director.name %>
       <% else %>
         Uh oh! We weren't able to find a director for this movie.
       <% end %>
+
     </td>
 
     <td>
